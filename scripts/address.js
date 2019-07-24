@@ -24,18 +24,22 @@ const favHTMLRep = (favoriteThing, whereToPurchase) => {
     </div>
     `
 }
-
+// todo 
 
 
 document.querySelector("#saveEntry").addEventListener("click", ()=>{
+    if (document.querySelector("#fullName").value === "" || document.querySelector("#address").value === ""){
+        alert("Please enter ALL of the information");
+        clearForm();
+    }
+    else {
     const name = document.querySelector("#fullName").value
     const address = document.querySelector("#address").value
-    console.log(name)
     const personalAddress = htmlRep(name, address)
     console.log(personalAddress)
     addressContainer.innerHTML += personalAddress
     clearForm()
-    
+    }
 })
 
 document.querySelector("#saveToWishList").addEventListener("click", () => {
