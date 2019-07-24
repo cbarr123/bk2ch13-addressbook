@@ -1,9 +1,10 @@
-// todo RTeference to DOM Element
+// todo Reference to DOM Element
 // todo event listener
 // todo get data
-// todo HTML representtion
+// todo HTML representation
 // todo Render to DOM
 const addressContainer = document.querySelector("#addressList")
+const favContainer = document.querySelector("#favThings")
 const htmlRep = (name, address) => {
     return `
     <div>
@@ -12,6 +13,17 @@ const htmlRep = (name, address) => {
     </div>
     `
 }
+
+const favHTMLRep = (favoriteThing, whereToPurchase) => {
+    return `
+    <div>
+    <h3>${favoriteThing}</h3>
+    <p>${whereToPurchase}</p>
+    </div>
+    `
+}
+
+
 
 document.querySelector("#saveEntry").addEventListener("click", ()=>{
     const name = document.querySelector("#fullName").value
@@ -23,6 +35,13 @@ document.querySelector("#saveEntry").addEventListener("click", ()=>{
     console.log(personalAddress)
     addressContainer.innerHTML += personalAddress
 })
+
+document.querySelector("#saveToWishList").addEventListener("click", () => {
+    const favoriteThing = document.querySelector("#favoriteItem").value
+    const whereToPurchase = document.querySelector("#purchaseLocation").value
+    console.log(favoriteThing)
+})
+
 
 
 
